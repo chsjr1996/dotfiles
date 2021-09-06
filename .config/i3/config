@@ -231,7 +231,7 @@ gaps inner 10
 # finds out, if available)
 #bar {
 #        # status_command i3status --config ~/.i3status.conf
-#        status_command /usr/bin/i3status-rs /home/henrique/.config/i3/i3status-rs/config.toml
+#        status_command /usr/bin/i3status-rs ~/.config/i3/i3status-rs/config.toml
 #        font pango:Font Awesome 5 Free 10
 #	height 25
 #}
