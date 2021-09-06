@@ -1,0 +1,24 @@
+# Utils
+alias copy_path='pwd | xclip -sel clip'
+alias edit_i3='vim ~/.config/i3/config'
+alias vim='nvim'
+alias vi='nvim'
+
+# LSD
+alias ls='lsd'
+alias ll='lsd -l'
+alias lt='lsd --tree --depth=2'
+
+# Docker
+alias dkps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Status}}'"
+alias dkpsp="docker ps --format 'table {{.Names}}\t{{.Ports}}'"
+alias dc="docker-compose"
+
+# Utils
+alias lsports='sudo lsof -i -P -n | grep LISTEN'
+
+# Laravel
+alias sail='bash vendor/bin/sail'
+
+# ----- Private aliases
+for f in ~/.private.aliases.d/aliases_*; do source $f; done
