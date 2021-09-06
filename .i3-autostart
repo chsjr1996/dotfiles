@@ -1,0 +1,9 @@
+# Touchpad and Keyboard
+setxkbmap -layout br
+
+# Wallpaper
+feh --bg-fill $HOME/Pictures/Abstract/_ff_purple.jpg
+
+# Apps
+redshift -P -O 3000
+picom --config ~/.config/picom/picom.conf
