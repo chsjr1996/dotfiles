@@ -40,5 +40,6 @@ cat > $dir/colors.rasi <<- EOF
 EOF
 
 
-rofi -show locate -modi locate:~/Downloads/Apps/Rofi/rofi_locate.sh -theme $dir/"$theme"
+rofi -show locate -modi locate:~/.config/rofi/launchers/rofi_locate.sh -theme $dir/"$theme"
+
 
