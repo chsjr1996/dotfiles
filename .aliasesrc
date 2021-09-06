@@ -20,5 +20,16 @@ alias lsports='sudo lsof -i -P -n | grep LISTEN'
 # Laravel
 alias sail='bash vendor/bin/sail'
 
+# Git
+alias gpush='git push'
+alias gpull='git pull'
+alias gbranch='git checkout'
+alias gnbranch='git checkout -b'
+alias gadd='git add'
+alias gcom='git commit'
+alias gstat='git status'
+alias gdiff='git diff'
+alias gdiffs='git diff --staged'
+
 # ----- Private aliases
 for f in ~/.private.aliases.d/aliases_*; do source $f; done
