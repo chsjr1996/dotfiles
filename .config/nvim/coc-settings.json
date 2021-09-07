@@ -1,0 +1,9 @@
+{
+  "html.filetypes": [
+    "html",
+    "handlebars",
+    "htmldjango",
+    "blade",
+    "twig"
+  ]
+}
