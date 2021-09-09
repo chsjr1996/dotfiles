@@ -28,21 +28,18 @@ compinit
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Aliases file
 source ~/.aliasesrc
-
-# Exports file
 source ~/.env-exports
-
-# SSH AGENT
 source ~/.ssh-agentrc
 
 # Exports
-export VISUAL=nvim
+export VISUAL=vim
 export EDITOR="$VISUAL"
 
 # Bindkeys
 # --- delete key
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 
 # --- CTRL + Left/Right arrows
