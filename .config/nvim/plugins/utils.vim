@@ -1,5 +1,5 @@
-Plugin 'preservim/nerdtree'
+Plugin 'junegunn/fzf.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'alvan/vim-closetag'
+Plugin 'jiangmiao/auto-pairs'

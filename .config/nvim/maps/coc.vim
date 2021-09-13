@@ -4,6 +4,7 @@ runtime ./_coc_func.vim
 map <C-j> :call CocActionAsync('jumpDefinition')<CR>
 map <C-h> :call CocActionAsync('doHover')<CR>
 map <C-l> :CocList outline<CR>
+map <C-LeftMouse> <Plug>(coc-definition)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
