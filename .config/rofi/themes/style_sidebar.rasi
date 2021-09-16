@@ -24,13 +24,15 @@ configuration {
 
 window {
     transparency:                   "real";
-    background-color:               @bg;
+    /* background-color:               @bg; */
+    background-color:               #00000099;
     text-color:                     @fg;
-	border:							0px;
+	border:            				3px;
 	border-color:					@ac;
-    border-radius:                  0;
-	width:							40%;
-    location:                       center;
+    border-radius:                  0px;
+	height:							100%;
+	width:							30%;
+    location:                       west;
     x-offset:                       0;
     y-offset:                       0;
 }
@@ -103,7 +105,7 @@ element {
 
 element-icon {
     background-color:               inherit;
-    size:                           28px;
+    size:                           24px;
     border:                         0px;
 }
 
