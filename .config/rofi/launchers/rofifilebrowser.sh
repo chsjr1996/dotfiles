@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-theme="style_sidebar"
-dir="$HOME/.config/rofi/themes"
+themesDir="$HOME/.config/rofi/themes"
+theme="style_gruvbox"
 
-rofi -no-lazy-grab -show filebrowser -modi filebrowser -theme $dir/"$theme"
+rofi -no-lazy-grab -show filebrowser -modi filebrowser -theme $themesDir/"$theme"

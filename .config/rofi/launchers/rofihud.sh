@@ -1,3 +1,6 @@
 #!/bin/bash
 
-python3 ~/.config/rofi/launchers/rofiHUD.py
+scriptsDir="$HOME/.config/rofi/scripts"
+script="rofiHUD.py"
+
+python3 $scriptsDir/"$script"

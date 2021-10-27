@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
+themesDir="$HOME/.config/rofi/themes"
 theme="style_sidebar"
-dir="$HOME/.config/rofi/themes"
 
-rofi -no-lazy-grab -show window -modi window -matching glob -theme $dir/"$theme"
+rofi -no-lazy-grab -show window -modi window -matching glob -theme $themesDir/"$theme"

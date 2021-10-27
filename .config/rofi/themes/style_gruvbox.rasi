@@ -1,23 +1,22 @@
 configuration {
-	font:							"Iosevka Nerd Font 10";
-    show-icons:                     true;
-	icon-theme: 					"Papirus";
-    display-drun: 					"";
-    drun-display-format:            "{name}";
-    disable-history:                false;
-	sidebar-mode: 					false;
+	font:				"Roboto 10";
+	show-icons:                     true;
+	icon-theme: 			"Papirus";
+	display-drun: 			"";
+	drun-display-format:            "{name}";
+	disable-history:                false;
+	sidebar-mode: 			false;
 }
 
 window {
     background-color:               #282828;
-    text-color:                     White;
-	border:            				0;
+    text-color:                     #000000;
+	border:							0px;
 	border-color:					#ffffffff;
-    border-radius:                  0px;
-	height:							500px;
-	width:							400px;
-    location:                       west;
-    x-offset:                       10px;
+    border-radius:                  0;
+	width:							500px;
+    location:                       center;
+    x-offset:                       0;
     y-offset:                       0;
 }
 
@@ -25,14 +24,14 @@ prompt {
     enabled: 						true;
 	padding: 						0.30% 1% 0% -0.5%;
 	background-color: 				#1c1c1c;
-	text-color: 					White;
-	font:							"Roboto 12";
+	text-color: 					#ffffff;
+	font:							"FantasqueSansMono Nerd Font 12";
 }
 
 entry {
     background-color:               #1c1c1c;
-    text-color:                     White;
-    placeholder-color:              White;
+    text-color:                     #ffffff;
+    placeholder-color:              #ffffff;
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Search";
@@ -41,16 +40,16 @@ entry {
 }
 
 textbox {
-   background-color:                #1c1c1c;
-   text-color:                      White;
-   placeholder-color:               White;
-   padding:                         1.5%;
+    background-color:               #1c1c1c;
+    text-color:                     White;
+    placeholder:                    White;
+    padding:                        1.5%;
 }
 
 inputbar {
 	children: 						[ prompt, entry ];
     background-color:               #1c1c1c;
-    text-color:                     White;
+    text-color:                     #ffffff;
     expand:                         false;
 	border:							0% 0% 0% 0%;
     border-radius:                  0px;
@@ -81,7 +80,7 @@ mainbox {
 
 element {
     background-color:               #282828;
-    text-color:                     White;
+    text-color:                     #ffffff;
     orientation:                    horizontal;
     border-radius:                  0%;
     padding:                        1% 0.5% 1% 0.5%;
@@ -89,7 +88,7 @@ element {
 
 element-icon {
     background-color:               inherit;
-    size:                           24px;
+    size:                           28px;
     border:                         0px;
 }
 
@@ -103,8 +102,8 @@ element-text {
 }
 
 element selected {
-    background-color:               #4e4e4e ;
-    text-color:                     White;
+    background-color:               #4e4e4e;
+    text-color:                     #ffffff;
 	border:							0% 0% 0% 0%;
     border-radius:                  0px;
     border-color:                  	#ffffffff;

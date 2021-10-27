@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-theme="style_sidebar"
-dir="$HOME/.config/rofi/themes"
+themesDir="$HOME/.config/rofi/themes"
+theme="style_gruvbox"
 
-rofi -show calc -modi calc -theme $dir/"$theme" 
+rofi -show calc -modi calc -theme $themesDir/"$theme" 

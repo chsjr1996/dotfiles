@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-theme="style_sidebar"
-dir="$HOME/.config/rofi/themes"
+export PATH="$HOME/.local/bin:$PATH"
 
-rofimoji --skin-tone neutral --clipboarder xclip --selector-args "-no-lazy-grab -theme $dir/"$theme""
+themesDir="$HOME/.config/rofi/themes"
+theme="style_gruvbox"
+
+rofimoji --selector rofi --selector-args="-theme $themesDir/$theme"

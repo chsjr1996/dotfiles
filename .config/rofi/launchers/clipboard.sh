@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-theme="style_sidebar"
-dir="$HOME/.config/rofi/themes"
+themesDir="$HOME/.config/rofi/themes"
+theme="style_gruvbox"
 
-CM_LAUNCHER=rofi clipmenu -no-lazy-grab -theme $dir/"$theme" -p Clipboard
+CM_LAUNCHER=rofi clipmenu -no-lazy-grab -theme $themesDir/"$theme" -p Clipboard

@@ -1,5 +1,6 @@
 #!/bin/bash
 
-dir="$HOME/.config/rofi/themes"
+themesDir="$HOME/.config/rofi/themes"
+theme="dmenu"
 
-rofi -show run -theme $dir/bottom_dmenu
+rofi -show run -theme $themesDir/"$theme"
