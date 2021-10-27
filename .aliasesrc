@@ -1,35 +1,57 @@
 # Utils
-alias copy_path='pwd | xclip -sel clip'
+alias copy_path='echo -n $(pwd)| xclip -sel clip'
 alias edit_i3='vim ~/.config/i3/config'
+alias edit_polybar='vim ~/.config/polybar'
+alias lsports='sudo lsof -i -P -n | grep LISTEN'
+
+# Editors
 alias vim='nvim'
 alias vi='nvim'
 
-# LSD
+# LSD & File utils
 alias ls='lsd'
 alias ll='lsd -l'
 alias lt='lsd --tree --depth=2'
+alias cat='bat'
 
 # Docker
+alias dkstart='sudo systemctl start docker'
 alias dkps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Status}}'"
 alias dkpsp="docker ps --format 'table {{.Names}}\t{{.Ports}}'"
-alias dc="docker-compose"
-
-# Utils
-alias lsports='sudo lsof -i -P -n | grep LISTEN'
+alias dkc="docker-compose"
 
 # Laravel
 alias sail='bash vendor/bin/sail'
 
 # Git
+alias gfetch='git fetch'
 alias gpush='git push'
 alias gpull='git pull'
-alias gbranch='git checkout'
-alias gnbranch='git checkout -b'
+alias gcheckout='git checkout'
+alias gbranch='git checkout -b'
 alias gadd='git add'
 alias gcom='git commit'
 alias gstat='git status'
 alias gdiff='git diff'
 alias gdiffs='git diff --staged'
+alias gours='git checkout --ours'
+alias gtheirs='git checkout --theirs'
+
+# SSH key
+alias sshc='ssh-add -D'
+alias ssha='ssh-add'
+alias sshl='ssh-add -l'
+
+# External display
+alias display_on='xrandr --output HDMI-1 --primary --auto --left-of eDP-1 && nitrogen --restore'
+alias display_off='xrandr --output HDMI-1 --off && nitrogen --restore'
+
+# Package manager (ArchLinux)
+alias pacinstall='sudo pacman -S'
+alias pacquery='pacman -Qs'
+alias pacqueryi='pacman -Qi'
+alias pacsearch='pacman -Ss'
+alias pacsearchi='pacman -Si'
 
 # ----- Private aliases
 for f in ~/.private.aliases.d/aliases_*; do source $f; done
