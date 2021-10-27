@@ -1,0 +1,4 @@
+# Exports
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+export TERMINAL=xfce4-terminal
