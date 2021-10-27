@@ -13,6 +13,10 @@ endfunction
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+" File type maps
+let g:coc_filetype_map = {
+  \ 'blade': 'html',
+  \ }
 
 " Start Coc recomends
 set encoding=utf-8

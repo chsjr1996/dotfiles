@@ -1,2 +1,3 @@
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'sickill/vim-monokai'
+Plugin 'kaicataldo/material.vim'
+Plugin 'morhetz/gruvbox'
