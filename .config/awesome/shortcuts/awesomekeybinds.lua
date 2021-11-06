@@ -4,7 +4,7 @@ local hotkeys_popup    = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 package.loaded["awful.hotkeys_popup.keys.tmux"] = {}
 
-function awesomekeybinds(modkey)
+function awesomekeybinds()
     awful.keyboard.append_global_keybindings({
       awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
                 {description="show help", group="awesome"}),

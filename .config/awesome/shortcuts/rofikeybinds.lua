@@ -2,7 +2,7 @@ local awful = require("awful")
 
 local rofiLaunchersDir = os.getenv("HOME").."/.config/rofi/launchers"
 
-function rofikeybinds(modkey)
+function rofikeybinds()
     awful.keyboard.append_global_keybindings({
         awful.key({ modkey,           }, "F1",
                   function()

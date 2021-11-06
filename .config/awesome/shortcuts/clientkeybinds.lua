@@ -1,6 +1,6 @@
 local awful = require("awful")
 
-function clientkeybinds(modkey)
+function clientkeybinds()
     awful.keyboard.append_global_keybindings({
       awful.key({ modkey,           }, "j",
           function ()

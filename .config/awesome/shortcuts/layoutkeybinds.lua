@@ -1,6 +1,6 @@
 local awful = require("awful")
 
-function layoutkeybinds(modkey)
+function layoutkeybinds()
   awful.keyboard.append_global_keybindings({
       awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
                 {description = "swap with next client by index", group = "client"}),

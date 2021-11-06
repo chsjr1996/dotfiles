@@ -1,6 +1,6 @@
 local awful = require("awful")
 
-function tagkeybinds(modkey)
+function tagkeybinds()
     awful.keyboard.append_global_keybindings({
         awful.key({ modkey, }, "Escape", awful.tag.history.restore,
                   {description = "go back", group = "tag"}),

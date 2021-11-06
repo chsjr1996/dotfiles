@@ -18,12 +18,6 @@ require("modules.tweaks")
 require("modules.rules")
 -- }}}
 
--- {{{ Widgets
-local widget_promptbox = require("widgets.promptbox")
-local widget_tasklist  = require("widgets.tasklist")
-local widget_taglist   = require("widgets.taglist")
--- }}}
-
 -- {{{ Shortcuts
 local awesomekeybinds  = require("shortcuts.awesomekeybinds")
 local tagkeybinds      = require("shortcuts.tagkeybinds")
@@ -40,15 +34,15 @@ modkey = "Mod4"
 -- }}}
 
 -- {{{ Wibar
+local mainbar_enabled = true
+
 screen.connect_signal("request::desktop_decoration", function(s)
     awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 
-    s.widget_promptbox   = widget_promptbox()
-    s.widget_tasklist    = widget_tasklist(s)
-    s.widget_taglist     = widget_taglist(s)
-
-    mainbar(s) 
-
+    if mainbar_enabled then
+        s.widget_promptbox = require("widgets.promptbox")()
+        mainbar(s)
+    end
 end)
 -- }}}
 
@@ -57,11 +51,11 @@ mousebinds()
 -- }}}
 
 -- {{{ Key bindings
-awesomekeybinds(modkey)
-tagkeybinds(modkey)
-launcherkeybinds(modkey, terminal)
-clientkeybinds(modkey)
-layoutkeybinds(modkey)
-rofikeybinds(modkey)
+awesomekeybinds()
+tagkeybinds()
+launcherkeybinds()
+clientkeybinds()
+layoutkeybinds()
+rofikeybinds()
 -- }}}
 

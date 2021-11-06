@@ -1,7 +1,7 @@
 local awful   = require("awful")
 local menubar = require("menubar")
 
-function launcherkeybinds(modkey, terminal)
+function launcherkeybinds()
     menubar.utils.terminal = terminal
 
     awful.keyboard.append_global_keybindings({
