@@ -1,4 +1,4 @@
-let g:airline_theme='material_darker'
+let g:airline_theme='dark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#branch#enabled=1

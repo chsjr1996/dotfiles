@@ -21,3 +21,8 @@ map <C-n> :Explore<CR>
 map <F5> :Explore<CR>
 map <M-h> :help netrw-quickmap<CR>
 
+" - Tab splits
+nmap <M-up> :wincmd k<CR>
+nmap <M-down> :wincmd j<CR>
+nmap <M-left> :wincmd h<CR>
+nmap <M-right> :wincmd l<CR>
