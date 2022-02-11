@@ -1,8 +1,14 @@
 # Utils
 alias copy_path='echo -n $(pwd)| xclip -sel clip'
-alias edit_i3='vim ~/.config/i3/config'
-alias edit_polybar='vim ~/.config/polybar'
+alias edit_i3='cd ~/.config/i3 && nvim'
+alias edit_bspwm='cd ~/.config/bspwm && nvim'
+alias edit_sxhkd='nvim ~/.config/sxhkd/sxhkdrc'
+alias edit_polybar='cd ~/.config/polybar && nvim'
+alias edit_picom='nvim ~/.config/picom/picom.conf'
+alias edit_kitty='cd ~/.config/kitty && nvim'
 alias lsports='sudo lsof -i -P -n | grep LISTEN'
+alias xopen='xdg-open'
+alias top='btop'
 
 # Editors
 alias vim='nvim'
@@ -13,19 +19,29 @@ alias ls='lsd'
 alias ll='lsd -l'
 alias lt='lsd --tree --depth=2'
 alias cat='bat'
+alias catp='bat -p'
+# --- Pretty JSON and Read (from clipboard)
+alias pjr='xclip -o -selection clipboard | jq | bat'
+# --- Pretty JSON and copy to clipboard
+alias pjc='xclip -o -selection clipboard | jq | xclip -sel clip'
 
 # Docker
 alias dkstart='sudo systemctl start docker'
+alias dkstop='sudo systemctl stop docker'
+alias dkrestart='sudo systemctl restart docker'
 alias dkps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Status}}'"
 alias dkpsp="docker ps --format 'table {{.Names}}\t{{.Ports}}'"
 alias dkc="docker-compose"
 
-# Laravel
+# PHP & Laravel
+alias phpunit='php vendor/bin/phpunit'
 alias sail='bash vendor/bin/sail'
 
 # Git
 alias gfetch='git fetch'
 alias gpush='git push'
+alias gpushn='git push --set-upstream'
+alias gpushno='git push --set-upstream origin'
 alias gpull='git pull'
 alias gcheckout='git checkout'
 alias gbranch='git checkout -b'
@@ -37,21 +53,27 @@ alias gdiffs='git diff --staged'
 alias gours='git checkout --ours'
 alias gtheirs='git checkout --theirs'
 
-# SSH key
+# SSH key & remote aliases
 alias sshc='ssh-add -D'
 alias ssha='ssh-add'
 alias sshl='ssh-add -l'
+alias vpnconfig='sudo openvpn --config'
 
 # External display
 alias display_on='xrandr --output HDMI-1 --primary --auto --left-of eDP-1 && nitrogen --restore'
 alias display_off='xrandr --output HDMI-1 --off && nitrogen --restore'
 
 # Package manager (ArchLinux)
+alias pacupdate='sudo pacman -Syyu'
 alias pacinstall='sudo pacman -S'
 alias pacquery='pacman -Qs'
 alias pacqueryi='pacman -Qi'
 alias pacsearch='pacman -Ss'
 alias pacsearchi='pacman -Si'
+
+# Kitty
+alias icat='kitty +kitten icat'
+alias ttitle='kitty @ set-window-title'
 
 # ----- Private aliases
 for f in ~/.private.aliases.d/aliases_*; do source $f; done
