@@ -4,9 +4,15 @@
 "colorscheme gruvbox
 
 " --- Material
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'ocean'
-colorscheme material
+"let g:material_terminal_italics = 1
+"let g:material_theme_style = 'ocean'
+"colorscheme material
+"hi Normal guibg=NONE ctermbg=NONE
+
+" --- Monokai
+colorscheme monokai
+hi Normal guibg=NONE ctermbg=NONE
+highlight Pmenu ctermbg=black guibg=black
 
 " --- Solarized
 " Default value is "normal", Setting this option to "high" or "low" does use the

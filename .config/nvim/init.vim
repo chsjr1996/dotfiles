@@ -6,7 +6,7 @@
 " ---------------------------------------------------------------------
 filetype plugin on
 syntax enable
-set number
+set number relativenumber
 set termguicolors
 set shell=zsh
 set tabstop=4
@@ -40,6 +40,7 @@ runtime ./maps/general.vim
 runtime ./maps/preservim.vim
 runtime ./maps/fzf.vim
 runtime ./maps/coc.vim
+runtime ./maps/terminal.vim
 " }}}"
 
 " Configs "{{{

@@ -1,7 +1,7 @@
 " --- keymaps
 "
 " Exiting & saving
-map <C-w> :bw<CR>
+map <M-w> :bw<CR>
 map <C-s> :w<CR>
 inoremap <C-s> <C-o>:w<CR>
 map <C-q> :q<CR>
