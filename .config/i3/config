@@ -1,5 +1,6 @@
 include ~/.config/i3/general.conf
 include ~/.config/i3/startup.conf
+include ~/.config/i3/modes.conf
 include ~/.config/i3/i3_binds.conf
 include ~/.config/i3/custom_binds.conf
 include ~/.config/i3/rules.conf
