@@ -2,8 +2,8 @@
 
 BAR_HEIGHT=27    # polybar height
 MARGIN_TOP=15    # to make space between top and popup
-MARGIN_RIGHT=20  # to make space between right and popup
-MARGIN_BOTTOM=20 # to make space between bottom and popup
+MARGIN_RIGHT=10  # to make space between right and popup
+MARGIN_BOTTOM=50 # to make space between bottom and popup
 MARGIN_LEFT=20   # to make space between left and popup
 YAD_WIDTH=222    # 222 is minimum possible value
 YAD_HEIGHT=193   # 193 is minimum possible value

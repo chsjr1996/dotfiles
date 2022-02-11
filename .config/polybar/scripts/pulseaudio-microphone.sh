@@ -6,7 +6,7 @@ status() {
   if [ "$MUTED" = "yes" ]; then
     echo ""
   else
-    pacmd list-sources | grep "\* index:" -A 7 | grep volume | awk -F/ '{print "" $2}'
+    echo ""
   fi
 }
 
