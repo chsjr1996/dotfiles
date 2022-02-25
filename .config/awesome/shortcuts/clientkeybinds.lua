@@ -14,7 +14,7 @@ function clientkeybinds()
           end,
           {description = "focus previous by index", group = "client"}
       ),
-      awful.key({ modkey,           }, "Tab",
+      awful.key({ "Mod1",          }, "Tab",
           function ()
               awful.client.focus.history.previous()
               if client.focus then
@@ -45,14 +45,16 @@ function clientkeybinds()
                     c:raise()
                 end,
                 {description = "toggle fullscreen", group = "client"}),
-            awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
+            awful.key({ modkey,           }, "w",      function (c) c:kill()                         end,
                     {description = "close", group = "client"}),
-            awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
+            awful.key({ modkey,           }, "s",  awful.client.floating.toggle                     ,
                     {description = "toggle floating", group = "client"}),
             awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
                     {description = "move to master", group = "client"}),
-            awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
+            awful.key({ modkey,  "Shift"  }, "o",      function (c) c:move_to_screen()               end,
                     {description = "move to screen", group = "client"}),
+            awful.key({ modkey,           }, "o",      function ()  awful.screen.focus_relative(1)   end,
+                    {description = "jump to screen", group = "client"}),
             awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
                     {description = "toggle keep on top", group = "client"}),
             awful.key({ modkey,           }, "n",

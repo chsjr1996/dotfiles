@@ -14,10 +14,10 @@ local theme = {}
 
 theme.font          = "sans 8"
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#535d6c"
-theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#444444"
+theme.bg_normal     = "#000000"
+theme.bg_focus      = "#171717"
+theme.bg_urgent     = "#BC1111"
+theme.bg_minimize   = theme.bg_normal
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#aaaaaa"
@@ -58,6 +58,7 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 -- notification_[bg|fg]
 -- notification_[width|height|margin]
 -- notification_[border_color|border_width|shape|opacity]
+theme.notification_width = 250
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
@@ -98,7 +99,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
---theme.wallpaper = themes_path.."default/background.png" 
+theme.wallpaper = themes_path.."default/background.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
@@ -126,22 +127,22 @@ theme.awesome_icon = theme_assets.awesome_icon(
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = nil
+theme.icon_size  = 12
+theme.icon_font  = "Font Awesome 5 Free Solid "
+
+theme.hotkeys_fg           = "#AAAAAA"
+theme.hotkeys_label_fg     = "#000000"
+theme.hotkeys_modifiers_fg = "#3270FF"
+
+theme.systray_icon_spacing = dpi(10)
 
 -- Set different colors for urgent notifications.
 rnotification.connect_signal('request::rules', function()
     rnotification.append_rule {
         rule       = { urgency = 'critical' },
-        properties = { bg = '#ff0000', fg = '#ffffff' }
+        properties = { bg = theme.bg_urgent, fg = '#ffffff' }
     }
 end)
-
--- Tasklist
-theme.tasklist_disable_task_name = true
-
--- Collision
-theme.collision_focus_bg        = "#000000"
-theme.collision_focus_bg_center = "#222222"
-theme.collision_resize_bg       = "#000000"
 
 return theme
 

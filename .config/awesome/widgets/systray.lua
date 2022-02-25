@@ -1,10 +1,10 @@
 local wibox = require("wibox")
 
-function systray()
+local function systray()
     return {
+        layout = wibox.container.margin,
+        left = 10,
         wibox.widget.systray(),
-        margins = 5,
-        widget  = wibox.container.margin,
     }
 end
 

@@ -1,7 +1,8 @@
 local awful = require("awful")
 
-function promptbox()
+local function promptbox()
     return awful.widget.prompt()
 end
 
 return promptbox
+

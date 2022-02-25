@@ -2,7 +2,7 @@ local awful = require("awful")
 
 local rofiLaunchersDir = os.getenv("HOME").."/.config/rofi/launchers"
 
-function rofikeybinds()
+local function rofikeybinds()
     awful.keyboard.append_global_keybindings({
         awful.key({ modkey,           }, "F1",
                   function()
@@ -28,13 +28,13 @@ function rofikeybinds()
                   function()
                       awful.spawn.with_shell(rofiLaunchersDir.."/rofifilebrowser.sh")
                   end,
-                  {description = "show locate menu", group = "rofi"}),
-        awful.key({ modkey,           }, "w",
+                  {description = "show file browser", group = "rofi"}),
+        awful.key({ modkey,           }, "Tab",
                   function ()
                     awful.spawn.with_shell(rofiLaunchersDir.."/window.sh")
                   end,
-                  {description = "show main menu", group = "rofi"}),
-    }) 
+                  {description = "show window selector", group = "rofi"}),
+    })
 end
 
 return rofikeybinds

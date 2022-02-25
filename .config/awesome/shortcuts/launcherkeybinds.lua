@@ -5,7 +5,7 @@ function launcherkeybinds()
     menubar.utils.terminal = terminal
 
     awful.keyboard.append_global_keybindings({
-        awful.key({ modkey }, "p",
+        awful.key({ modkey }, "space",
                   function()
                       menubar.show()
                   end,

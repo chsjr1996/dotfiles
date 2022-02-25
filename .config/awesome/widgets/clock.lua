@@ -1,14 +1,19 @@
+local spawn = require("awful.spawn")
 local wibox = require("wibox")
 
-function clock()
+local popupApp = os.getenv("HOME") .. '/.scripts/popup-calendar.sh --popup'
+
+local function clock()
+    local textclock = wibox.widget.textclock('<b>%H:%M</b>')
+
+    textclock:connect_signal("button::press", function()
+      spawn.with_shell(popupApp)
+    end)
+
     return {
-        {
-            wibox.widget.textclock('%H:%M'),
-            margins = 1,
-            widget  = wibox.container.margin,
-        },
-        direction = "west",
-        widget    = wibox.container.rotate,
+      layout = wibox.container.margin,
+      left = 5,
+      textclock
     }
 end
 

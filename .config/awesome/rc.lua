@@ -1,16 +1,17 @@
 -- {{{ Main libs
 -- Core
 pcall(require, "luarocks.loader")
-local awful            = require("awful")
+local awful      = require("awful")
+local wibox      = require("wibox")
 require("awful.autofocus")
 
 -- Third-party modules
-require("collision")()
+--require("collision")()
 -- }}}
 
 -- {{{ Modules
-local mainbar          = require("modules.mainbar") 
-local naughty          = require("modules.naughty")
+naughty          = require("modules.naughty")
+local mainbar    = require("modules.mainbar")
 
 require("modules.layouts")
 require("modules.autostart")
@@ -24,8 +25,10 @@ local tagkeybinds      = require("shortcuts.tagkeybinds")
 local launcherkeybinds = require("shortcuts.launcherkeybinds")
 local clientkeybinds   = require("shortcuts.clientkeybinds")
 local layoutkeybinds   = require("shortcuts.layoutkeybinds")
-local rofikeybinds     = require("shortcuts.rofikeybinds") 
+local rofikeybinds     = require("shortcuts.rofikeybinds")
 local mousebinds       = require("shortcuts.mousebinds")
+local systembinds      = require("shortcuts.systembinds")
+local multimediabinds  = require("shortcuts.multimediabinds")
 
 terminal = "kitty"
 editor = os.getenv("EDITOR") or "nano"
@@ -57,5 +60,7 @@ launcherkeybinds()
 clientkeybinds()
 layoutkeybinds()
 rofikeybinds()
+systembinds()
+multimediabinds()
 -- }}}
 
