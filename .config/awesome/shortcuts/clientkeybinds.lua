@@ -45,6 +45,9 @@ function clientkeybinds()
                     c:raise()
                 end,
                 {description = "toggle fullscreen", group = "client"}),
+            awful.key({ modkey,           }, "c",
+                awful.placement.centered,
+                {description = "centralize client", group = "client"}),
             awful.key({ modkey,           }, "w",      function (c) c:kill()                         end,
                     {description = "close", group = "client"}),
             awful.key({ modkey,           }, "s",  awful.client.floating.toggle                     ,
