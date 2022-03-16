@@ -21,7 +21,7 @@ ruled.client.connect_signal("request::rules", function()
         rule_any = {
             instance = { "copyq", "pinentry" },
             class    = {
-                "Arandr", "Blueman-manager", "Gpick", "Gcolor3", "Kruler", "Sxiv", "kitty-float"
+                "Arandr", "Gpick", "Gcolor3", "kitty-float", "Pavucontrol"
             },
             name    = {
                 "Event Tester",  -- xev.
@@ -44,6 +44,9 @@ ruled.client.connect_signal("request::rules", function()
     -- Center all floating windows
     ruled.client.append_rule {
       rule_any   = { floating = true },
+      except     = {
+        class = "Yad"
+      },
       properties = {
         placement = awful.placement.centered
       }
