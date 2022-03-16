@@ -5,18 +5,14 @@ local awful      = require("awful")
 local wibox      = require("wibox")
 require("awful.autofocus")
 
--- Third-party modules
---require("collision")()
--- }}}
-
 -- {{{ Modules
-naughty          = require("modules.naughty")
-local mainbar    = require("modules.mainbar")
-
 require("modules.layouts")
 require("modules.autostart")
 require("modules.tweaks")
 require("modules.rules")
+
+naughty          = require("modules.naughty")
+local mainbar    = require("modules.mainbar")
 -- }}}
 
 -- {{{ Shortcuts
@@ -40,7 +36,13 @@ modkey = "Mod4"
 local mainbar_enabled = true
 
 screen.connect_signal("request::desktop_decoration", function(s)
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    local default_layout = awful.layout.layouts[3]
+
+    if screen.count() > 1 then
+      default_layout = awful.layout.layouts[1]
+    end
+
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, default_layout)
 
     if mainbar_enabled then
         s.widget_promptbox = require("widgets.promptbox")()
@@ -48,6 +50,10 @@ screen.connect_signal("request::desktop_decoration", function(s)
     end
 end)
 -- }}}
+
+--- {{{ Signals
+
+--- }}}
 
 -- {{{ Mouse bindings
 mousebinds()

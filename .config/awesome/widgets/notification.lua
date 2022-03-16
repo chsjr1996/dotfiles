@@ -1,23 +1,20 @@
--- BROKEN: Not ready yet
-
 local awful  = require("awful")
 local faicon = require("themes.default.faicon")
 local notify = require("utils.notify")
 
-local getIsPaused = naughty.is_suspended()
+local getIsPaused = naughty.instance.is_suspended()
 
 local function toggle_pause()
-  naughty.toggle()
+  naughty.instance.toggle()
 end
 
 local function notification()
     return awful.widget.watch(getIsPaused, 3, function (widget, stdout)
-        notify("Test", getIsPaused)
-        -- if string.find(stdout, 'yes') then
-        --   widget:set_markup_silently(faicon.fa_markup('\u{f131}', '#FFFFFF'))
-        -- else
-        --   widget:set_markup_silently(faicon.fa_markup('\u{f130}', '#FFFFFF'))
-        -- end
+        if stdout then
+          widget:set_markup_silently(faicon.fa_markup('\u{f131}', '#FFFFFF'))
+        else
+          widget:set_markup_silently(faicon.fa_markup('\u{f130}', '#FFFFFF'))
+        end
 
         widget:buttons(
           awful.util.table.join(

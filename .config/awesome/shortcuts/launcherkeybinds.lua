@@ -1,7 +1,21 @@
 local awful   = require("awful")
 local menubar = require("menubar")
 
-function launcherkeybinds()
+local function menubar_geometry_setup()
+  screen.connect_signal("request::desktop_decoration", function(s)
+    local x_offset = 10
+    local y_offset = x_offset
+    menubar.geometry = {
+      x      = x_offset,
+      y      = y_offset,
+      width  = s.geometry.width - (x_offset * 2),
+      height = 25,
+    }
+  end)
+end
+
+local function launcherkeybinds()
+    menubar_geometry_setup()
     menubar.utils.terminal = terminal
 
     awful.keyboard.append_global_keybindings({

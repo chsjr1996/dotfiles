@@ -22,28 +22,40 @@ local function mainbar(screen)
     screen.mainbar = awful.wibar {
         position = "top",
         screen   = screen,
+        height   = 35,
+        bg       = '#00000000',
         widget   = {
-            layout = wibox.layout.align.horizontal,
-            { -- Left widgets
-                layout = wibox.layout.fixed.horizontal,
-                widget_taglist(screen),
-                screen.widget_promptbox,
-            },
-            -- Middle widget
-            widget_tasklist(screen),
-            { -- Right widgets
-                layout = wibox.layout.fixed.horizontal,
-                -- widget_notification(),
-                wibox.widget.systray(),
-                widget_microphone(),
-                widget_volume(),
-                widget_brightness(),
-                widget_memory(),
-                widget_cpu(),
-                widget_fan(),
-                widget_clock(),
-                widget_layoutbox(screen),
-            },
+          layout = wibox.container.margin,
+          top = 10,
+          left = 10,
+          right = 10,
+          {
+            widget = wibox.container.background,
+            bg     = '#000000',
+            {
+              layout = wibox.layout.align.horizontal,
+              { -- Left widgets
+                  layout = wibox.layout.fixed.horizontal,
+                  widget_taglist(screen),
+                  screen.widget_promptbox,
+              },
+              -- Middle widget
+              widget_tasklist(screen),
+              { -- Right widgets
+                  layout = wibox.layout.fixed.horizontal,
+                  -- widget_notification(),
+                  wibox.widget.systray(),
+                  widget_microphone(),
+                  widget_volume(),
+                  widget_brightness(),
+                  widget_memory(),
+                  widget_cpu(),
+                  widget_fan(),
+                  widget_clock(),
+                  widget_layoutbox(screen),
+              },
+            }
+          }
         }
     }
 end

@@ -5,4 +5,6 @@ awful.spawn.with_shell("picom --experimental-backends --config ~/.config/picom/p
 awful.spawn.with_shell("sleep 1 && nitrogen --restore")
 awful.spawn.with_shell("numlockx on")
 awful.spawn.with_shell("clipmenud")
+awful.spawn.with_shell("flashfocus")
+awful.spawn.with_shell("pgrep -x xcape > /dev/null || xcape -e 'Super_L=Super_L|space'")
 

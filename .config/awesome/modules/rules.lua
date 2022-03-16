@@ -7,7 +7,7 @@ ruled.client.connect_signal("request::rules", function()
         id         = "global",
         rule       = { },
         properties = {
-            border_width = 2,
+            border_width = 0,
             focus        = awful.client.focus.filter,
             raise        = true,
             screen       = awful.screen.preferred,
@@ -21,19 +21,13 @@ ruled.client.connect_signal("request::rules", function()
         rule_any = {
             instance = { "copyq", "pinentry" },
             class    = {
-                "Arandr", "Blueman-manager", "Gpick", "Gcolor3", "Kruler", "Sxiv",
-                "Tor Browser", "Wpa_gui", "veromix", "xtightvncviewer",
-                "kitty-float"
+                "Arandr", "Blueman-manager", "Gpick", "Gcolor3", "Kruler", "Sxiv", "kitty-float"
             },
-            -- Note that the name property shown in xprop might be set slightly after creation of the client
-            -- and the name shown there might not match defined rules here.
             name    = {
                 "Event Tester",  -- xev.
                 "Developer Tools - Vivaldi.*",
             },
             role    = {
-                "AlarmWindow",    -- Thunderbird's calendar.
-                "ConfigManager",  -- Thunderbird's about:config.
                 "pop-up",         -- e.g. Google Chrome's (detached) Developer Tools.
             }
         },
@@ -45,6 +39,14 @@ ruled.client.connect_signal("request::rules", function()
         id         = "titlebars",
         rule_any   = { type = { "normal", "dialog" } },
         properties = { titlebars_enabled = false      }
+    }
+
+    -- Center all floating windows
+    ruled.client.append_rule {
+      rule_any   = { floating = true },
+      properties = {
+        placement = awful.placement.centered
+      }
     }
 end)
 
