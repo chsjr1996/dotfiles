@@ -1,5 +1,6 @@
-local ruled = require("ruled")
-local awful = require("awful")
+local ruled      = require("ruled")
+local awful      = require("awful")
+local beautiful = require("beautiful")
 
 ruled.client.connect_signal("request::rules", function()
     -- All clients will match this rule.
@@ -7,7 +8,7 @@ ruled.client.connect_signal("request::rules", function()
         id         = "global",
         rule       = { },
         properties = {
-            border_width = 0,
+            border_width = beautiful.border_width,
             focus        = awful.client.focus.filter,
             raise        = true,
             screen       = awful.screen.preferred,
@@ -21,11 +22,10 @@ ruled.client.connect_signal("request::rules", function()
         rule_any = {
             instance = { "copyq", "pinentry" },
             class    = {
-                "Arandr", "Gpick", "Gcolor3", "kitty-float", "Pavucontrol"
+                "Arandr", "Gpick", "Gcolor3", "kitty-float", "Pavucontrol", "flameshot"
             },
             name    = {
                 "Event Tester",  -- xev.
-                "Developer Tools - Vivaldi.*",
             },
             role    = {
                 "pop-up",         -- e.g. Google Chrome's (detached) Developer Tools.
@@ -51,10 +51,19 @@ ruled.client.connect_signal("request::rules", function()
         placement = awful.placement.centered
       }
     }
+
+
+    -- Bordeless clients
+    ruled.client.append_rule {
+          id         = "bordeless",
+          rule_any   = {
+              class    = {
+                  "flameshot"
+              },
+          },
+          properties = {
+              border_width = 0,
+          }
+    }
 end)
 
-client.connect_signal("property::name", function(c)
-    if (c.name == "Developer Tools - Vivaldi") then
-        c.floating = true
-    end
-end)

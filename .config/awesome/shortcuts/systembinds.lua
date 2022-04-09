@@ -1,16 +1,27 @@
-local awful = require("awful")
+local awful        = require("awful")
+local volumechange = require("utils.volumechange")
 
 local function systembinds()
     awful.keyboard.append_global_keybindings({
         -- Volume binds
         awful.key({}, "XF86AudioRaiseVolume",
                   function()
-                    awful.spawn.with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5%")
+                    volumechange('+')
                   end,
                   {description = "increase volume", group = "system"}),
         awful.key({}, "XF86AudioLowerVolume",
                   function()
-                    awful.spawn.with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5%")
+                    volumechange('-')
+                  end,
+                  {description = "decrease volume", group = "system"}),
+        awful.key({ modkey }, "Up",
+                  function()
+                    volumechange('+')
+                  end,
+                  {description = "increase volume", group = "system"}),
+        awful.key({ modkey }, "Down",
+                  function()
+                    volumechange('-')
                   end,
                   {description = "decrease volume", group = "system"}),
         awful.key({}, "XF86AudioMute",
@@ -29,14 +40,24 @@ local function systembinds()
                   function()
                     awful.spawn.with_shell("light -U 5")
                   end,
+                  {description = "decrease bright", group = "system"}),
+        awful.key({ modkey }, "Right",
+                  function()
+                    awful.spawn.with_shell("light -A 5")
+                  end,
                   {description = "increase bright", group = "system"}),
+        awful.key({ modkey }, "Left",
+                  function()
+                    awful.spawn.with_shell("light -U 5")
+                  end,
+                  {description = "decrease bright", group = "system"}),
 
         -- Others
         awful.key({}, "Print",
                   function()
                     awful.spawn.with_shell("flameshot gui")
                   end,
-                  {description = "increase bright", group = "system"}),
+                  {description = "Screenshot", group = "system"}),
     })
 end
 

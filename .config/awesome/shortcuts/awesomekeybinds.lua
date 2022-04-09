@@ -2,7 +2,7 @@ local awful = require("awful")
 
 local hotkeys_popup    = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
-package.loaded["awful.hotkeys_popup.keys.tmux"] = {}
+-- package.loaded["awful.hotkeys_popup.keys.tmux"] = {}
 
 function awesomekeybinds()
     awful.keyboard.append_global_keybindings({
@@ -23,15 +23,15 @@ function awesomekeybinds()
                     }
                 end,
                 {description = "lua execute prompt", group = "awesome"}),
-    })
 
-    awful.key({ modkey }, "b",
-      function()
-        myscreen = awful.screen.focused()
-        myscreen.mainbar.visible = not myscreen.mainbar.visible
-      end,
-      {description = "toggle wibar visibility", group = "awesome"}
-    )
+      awful.key({ modkey }, "b",
+        function()
+          local myscreen = awful.screen.focused()
+          myscreen.mainbar.visible = not myscreen.mainbar.visible
+        end,
+        {description = "toggle wibar visibility", group = "awesome"}
+      )
+    })
 end
 
 return awesomekeybinds

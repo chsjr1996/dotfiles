@@ -3,6 +3,7 @@ local wibox               = require("wibox")
 
 -- Left widgets
 local widget_taglist      = require("widgets.taglist")
+local widget_promptbox    = require("widgets.promptbox")
 
 -- Middle widgets
 local widget_tasklist     = require("widgets.tasklist")
@@ -19,6 +20,8 @@ local widget_clock        = require("widgets.clock")
 local widget_layoutbox    = require("widgets.layoutbox")
 
 local function mainbar(screen)
+    screen.widget_promptbox = widget_promptbox()
+
     screen.mainbar = awful.wibar {
         position = "top",
         screen   = screen,

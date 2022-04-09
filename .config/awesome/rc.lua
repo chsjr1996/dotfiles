@@ -2,8 +2,14 @@
 -- Core
 pcall(require, "luarocks.loader")
 local awful      = require("awful")
-local wibox      = require("wibox")
 require("awful.autofocus")
+
+--- {{{ Globals
+terminal = os.getenv("TERMINAL") or "kitty"
+editor = os.getenv("EDITOR") or "nano"
+editor_cmd = terminal .. " -e " .. editor
+modkey = "Mod4"
+--- }}}
 
 -- {{{ Modules
 require("modules.layouts")
@@ -25,18 +31,12 @@ local rofikeybinds     = require("shortcuts.rofikeybinds")
 local mousebinds       = require("shortcuts.mousebinds")
 local systembinds      = require("shortcuts.systembinds")
 local multimediabinds  = require("shortcuts.multimediabinds")
-
-terminal = "kitty"
-editor = os.getenv("EDITOR") or "nano"
-editor_cmd = terminal .. " -e " .. editor
-modkey = "Mod4"
+local utilsbinds       = require("shortcuts.utilskeybinds")
 -- }}}
 
--- {{{ Wibar
-local mainbar_enabled = true
-
+--- {{{ Signals
 screen.connect_signal("request::desktop_decoration", function(s)
-    local default_layout = awful.layout.layouts[3]
+    local default_layout = awful.layout.layouts[2]
 
     if screen.count() > 1 then
       default_layout = awful.layout.layouts[1]
@@ -44,22 +44,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, default_layout)
 
-    if mainbar_enabled then
-        s.widget_promptbox = require("widgets.promptbox")()
-        mainbar(s)
-    end
+    mainbar(s)
 end)
--- }}}
-
---- {{{ Signals
-
 --- }}}
 
--- {{{ Mouse bindings
+-- {{{ mouse/keybinds
 mousebinds()
--- }}}
-
--- {{{ Key bindings
 awesomekeybinds()
 tagkeybinds()
 launcherkeybinds()
@@ -68,5 +58,6 @@ layoutkeybinds()
 rofikeybinds()
 systembinds()
 multimediabinds()
+utilsbinds()
 -- }}}
 
