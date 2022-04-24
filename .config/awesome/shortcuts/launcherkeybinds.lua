@@ -3,12 +3,11 @@ local menubar = require("menubar")
 
 local function menubar_geometry_setup()
   local current_screen = awful.screen.focused()
-  local x_offset = 10
-  local y_offset = x_offset
+  local vert_bar_width = 35;
   menubar.geometry = {
-    x      = x_offset,
-    y      = y_offset,
-    width  = current_screen.geometry.width - (x_offset * 2),
+    x      = vert_bar_width,
+    y      = 0,
+    width  = current_screen.geometry.width - vert_bar_width,
     height = 25,
   }
 end

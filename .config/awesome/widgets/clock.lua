@@ -1,13 +1,14 @@
-local spawn = require("awful.spawn")
-local wibox = require("wibox")
+local spawn          = require("awful.spawn")
+local wibox          = require("wibox")
+local commonsettings = require("utils.commonsettings")
 
-local popupApp = os.getenv("HOME") .. '/.scripts/popup-calendar.sh --popup'
+local popupApp = os.getenv("HOME") .. '/.scripts/kitty-float.sh --interactive Calendar calcurse'
 
 local function clock()
     local textclock = wibox.widget.textclock('<b>%H:%M</b>')
 
     textclock:connect_signal("button::press", function()
-      spawn.with_shell(popupApp)
+      spawn(popupApp, commonsettings.centered_medium_client)
     end)
 
     return {

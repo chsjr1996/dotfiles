@@ -1,14 +1,15 @@
-local awful  = require("awful")
-local spawn  = require("awful.spawn")
-local faicon = require("themes.default.faicon")
+local awful          = require("awful")
+local spawn          = require("awful.spawn")
+local faicon         = require("themes.default.faicon")
+local commonsettings = require("utils.commonsettings")
 
 local currentUsedCpu = os.getenv("HOME") .. '/.scripts/system-load.sh cpu'
-local topCmd         = os.getenv("HOME") .. '/.scripts/kitty-float.sh top'
+local topCmd         = os.getenv("HOME") .. '/.scripts/kitty-float.sh --interactive System\\ monitor btop'
 local high_usage     = 60
 local medium_usage   = 30
 
 local function open_top_term()
-  spawn.with_shell(topCmd)
+  spawn(topCmd, commonsettings.centered_medium_client)
 end
 
 local function cpu()

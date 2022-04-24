@@ -4,7 +4,8 @@ local wibox = require("wibox")
 local function layoutbox(screen)
     return {
       layout = wibox.container.margin,
-      left = 10,
+      margins = 5,
+      -- left = 10,
       awful.widget.layoutbox {
         screen  = screen,
         buttons = {

@@ -1,14 +1,15 @@
-local awful  = require("awful")
-local spawn  = require("awful.spawn")
-local faicon = require("themes.default.faicon")
+local awful          = require("awful")
+local spawn          = require("awful.spawn")
+local faicon         = require("themes.default.faicon")
+local commonsettings = require("utils.commonsettings")
 
 local currentSpeed = os.getenv("HOME") .. '/.scripts/system-fan-speed.sh'
-local sensorsCmd   = os.getenv("HOME") .. '/.scripts/kitty-float.sh sensors'
+local sensorsCmd   = os.getenv("HOME") .. '/.scripts/kitty-float.sh --oneshot Sensors sensors'
 local high_speed   = 3
 local medium_speed = 2
 
 local function open_sensors_term()
-  spawn.with_shell(sensorsCmd)
+  spawn(sensorsCmd, commonsettings.centered_medium_client)
 end
 
 local function fan()

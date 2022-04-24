@@ -1,7 +1,6 @@
 local awful = require("awful")
-local wibox = require("wibox")
 
-function tasklist(screen)
+local function tasklist(screen)
     return awful.widget.tasklist {
         screen  = screen,
         filter  = awful.widget.tasklist.filter.currenttags,
