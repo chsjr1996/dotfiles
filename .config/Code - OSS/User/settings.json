@@ -1,0 +1,65 @@
+{
+    //#region diffEditor/editor
+    "diffEditor.renderSideBySide": false,
+    "editor.smoothScrolling": true,
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.lineHeight": 3,
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers": "relative",
+    "editor.wordWrap": "on",
+    "editor.fontFamily": "'JetBrains Mono",
+    "editor.fontLigatures": true,
+    //#endregion
+    //#region explorer
+    "explorer.autoReveal": false,
+    //#endregion
+    //#region php
+    "php.suggest.basic": false,
+    //#endregion
+    //#region Terminal
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    //#endregion
+    //#region Workbench
+    "workbench.list.smoothScrolling": true,
+    "workbench.editor.showTabs": false,
+    "workbench.colorTheme": "Material Theme Ocean High Contrast",
+    //#endregion
+    //#region VIM Plugin
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.highlightedyank.enable": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "w"],
+            "commands": [
+                "workbench.action.closeActiveEditor",
+            ]
+        },
+        {
+            "before": ["<leader>", "c"],
+            "commands": [
+                ":noh",
+            ]
+        },
+        {
+            "before": ["<leader>", "b"],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility",
+            ]
+        },
+        {
+            "before": ["<leader>", "s"],
+            "commands": [
+                "workbench.action.gotoSymbol",
+            ]
+        }
+    ],
+    "workbench.activityBar.visible": false,
+    "workbench.iconTheme": "eq-material-theme-icons-ocean"
+    //#endregion
+}
